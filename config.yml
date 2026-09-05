@@ -1,0 +1,41 @@
+# ==============================================================================
+# Vagrant Cluster Configuration
+# Description: Defines the infrastructure state for the local testing environment.
+# ==============================================================================
+
+nodes:
+  # ---------------------------------------------------
+  # Master Node: Static IP, SCSI Controller, 30GB Disk
+  # ---------------------------------------------------
+  master:
+    ip: "192.168.56.10"
+    cpu: 2
+    mem: 4096
+    disk_size: "30GB"
+    disk_controller: "scsi"       # Options: scsi, sata, ide
+    network_type: "private_network" # Options: private_network, public_network, nat
+    ip_mode: "static"             # Options: static, dhcp
+
+  # ---------------------------------------------------
+  # Worker 1: DHCP, SATA Controller, 20GB Disk
+  # ---------------------------------------------------
+  worker1:
+    ip: ""                        # Left empty because ip_mode is dhcp
+    cpu: 2
+    mem: 2048
+    disk_size: "20GB"
+    disk_controller: "sata"
+    network_type: "private_network"
+    ip_mode: "dhcp"
+
+  # ---------------------------------------------------
+  # Worker 2: NAT Network, IDE Controller, 20GB Disk
+  # ---------------------------------------------------
+  worker2:
+    ip: ""
+    cpu: 2
+    mem: 2048
+    disk_size: "20GB"
+    disk_controller: "ide"
+    network_type: "nat"
+    ip_mode: "dhcp"
