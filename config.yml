@@ -12,7 +12,7 @@ nodes:
     cpu: 2
     mem: 4096
     disk_size: "30GB"
-    disk_controller: "scsi"       # Options: scsi, sata, ide
+    disk_controller: "scsi"       # Options: scsi, sata
     network_type: "private_network" # Options: private_network, public_network, nat
     ip_mode: "static"             # Options: static, dhcp
 
